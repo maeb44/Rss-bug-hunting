@@ -79,6 +79,9 @@ body {
 }
 
 .features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   list-style: none;
   margin-bottom: 24px;
   text-align: left;
@@ -90,7 +93,7 @@ body {
 }
 
 .features li::before {
-  content: '';
+  content: '✓';
   color: #22c55e;
   font-weight: 700;
   margin-right: 8px;
