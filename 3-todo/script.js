@@ -29,7 +29,11 @@ function toggleTask(id) {
 }
 
 function deleteTask(id) {
-  tasks.filter((t) => t.id !== id);
+  console.log(tasks);
+  let index = tasks.findIndex((t) => t.id == id);
+  if (index !== -1) {
+    tasks.splice(index, 1);
+  }
   render();
 }
 
