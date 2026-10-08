@@ -14,6 +14,10 @@ function addTask() {
   const text = input.value;
   errorEl.hidden = true;
   tasks.push({ id: nextId++, text: text, done: false });
+  if (input.value === '') {
+    alert('Введите текст задачи');
+    return;
+  }
   input.value = '';
   render();
 }
