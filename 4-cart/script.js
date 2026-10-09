@@ -84,6 +84,12 @@ function clearCart() {
 function renderCart() {
   cartItemsEl.innerHTML = '';
   let total = 0;
+  if (cart.length === 0) {
+    const li = document.createElement('li');
+    li.className = 'cart-item';
+    li.innerHTML = `<p>Корзина пуста</p>`;
+    cartItemsEl.appendChild(li);
+  }
   cart.forEach((item) => {
     const lineTotal = item.price * item.qty;
     const li = document.createElement('li');
