@@ -29,7 +29,6 @@ function toggleTask(id) {
 }
 
 function deleteTask(id) {
-  console.log(tasks);
   let index = tasks.findIndex((t) => t.id == id);
   if (index !== -1) {
     tasks.splice(index, 1);
@@ -47,11 +46,17 @@ function getVisibleTasks() {
 }
 
 function updateCounter() {
-  counter.textContent = 'Активных задач: ' + tasks.length;
+  const length = tasks.filter((e) => !e.done).length;
+  counter.textContent = 'Невыполненные задачи ' + length;
 }
 
 function render() {
-  const visible = getVisibleTasks();
+  const filter = document.querySelector('.active').dataset.filter;
+  const visible = getVisibleTasks().filter((task) => {
+    if (filter === 'active') return !task.done;
+    if (filter === 'done') return task.done;
+    return true;
+  });
   list.innerHTML = '';
   for (let i = 0; i < visible.length; i++) {
     const task = visible[i];
