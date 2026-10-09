@@ -77,7 +77,7 @@ function applyPromo() {
 }
 
 function clearCart() {
-  cart.splice(0, 1);
+  cart.length = 0;
   renderCart();
 }
 
