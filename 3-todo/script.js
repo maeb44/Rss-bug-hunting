@@ -11,7 +11,8 @@ let currentFilter = 'all';
 let nextId = 1;
 
 function addTask() {
-  if (input.value === '') {
+  if (input.value.trim() === '') {
+    input.value = '';
     alert('Введите текст задачи');
     return;
   }
