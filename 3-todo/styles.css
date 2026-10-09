@@ -5,7 +5,12 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
   background: #f1f5f9;
   color: #0f172a;
   padding: 40px 20px;
@@ -130,4 +135,9 @@ body {
 .footer-row button {
   background: #e2e8f0;
   color: #334155;
+}
+.completed {
+  .task__text {
+    text-decoration: line-through;
+  }
 }
